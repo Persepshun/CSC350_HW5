@@ -1,55 +1,100 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
+    background: url('grading_tool_bg.png') no-repeat center center fixed; /* Background image for the tool */
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    color: #333; /* Dark gray text color for readability */
+    margin: 0;
+    padding: 0;
 }
 
+/* Box Styling for Instruction and Final Grades Sections */
+.instructions-box, .final-grades-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+    border: 1px solid #ddd; /* Light gray border for box definition */
+    border-radius: 5px; /* Rounded corners for aesthetics */
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: left;
+}
+
+/* Header Styles */
 h2 {
-    color: #FF6600;
+    color: #FF6600; /* Orange color for main headers */
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    text-shadow: 1px 1px 1px black; /* 1px black shadow for depth */
 }
 
-.instructions {
+h3 {
+    color: #1520A6; /* Azure blue color for sub-headers */
+    font-weight: bold;
     text-align: center;
-    color: #555;
-    margin-bottom: 10px;
 }
 
+/* Specific Styling for Headers within Boxes */
+.instructions-box h2, .final-grades-box h2 {
+    margin-top: 0;
+}
+
+/* Instructions Paragraphs and Notes */
+.instructions-box p, .instructions-box .note {
+    color: #555; /* Medium gray color for instructions */
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Unordered List Styling */
+ul.instructions {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px;
+    margin: 10px 0;
+    line-height: 1.6; /* Spacing for readability */
+    color: #333; /* Dark gray text */
+    text-align: left;
+}
+
+/* Form Styling */
 form {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Solid white background for form */
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
     max-width: 500px;
     margin: 20px auto;
 }
 
+/* Form Elements */
 label, input, select, button {
     display: block;
     width: 100%;
     margin-bottom: 10px;
 }
 
+/* Button Styling */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Green background for submit button */
+    color: white; /* White text */
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green for hover effect */
 }
 
+/* Success Message */
 .success-message {
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: #155724; /* Dark green text color for success */
+    background-color: #d4edda; /* Light green background for success message */
+    border: 1px solid #c3e6cb; /* Green border for success message */
     padding: 10px;
     border-radius: 5px;
     max-width: 500px;
@@ -57,34 +102,23 @@ button:hover {
     text-align: center;
 }
 
+/* Final Grades Table Styling */
 .grades-table {
-    width: 50%;
-    margin: 20px auto;
+    width: 100%; /* Full width within the box */
     border-collapse: collapse;
+    margin-top: 10px;
 }
 
 .grades-table th, .grades-table td {
     padding: 8px;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Light gray border for table cells */
 }
 
 .grades-table th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; /* Light gray background for header cells */
 }
 
 .grades-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-.instructions {
-    color: #333;
-    font-size: 1em;
-    margin: 10px auto 20px;
-    max-width: 500px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: left;
+    background-color: #f1f1f1; /* Light gray hover effect */
 }

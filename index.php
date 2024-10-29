@@ -2,18 +2,6 @@
 // Include the database connection file
 include 'db_connect.php';
 
-<p class="instructions">
-    Welcome to the Grading Tool! Follow these steps:
-    <ul>
-        <li>1. Choose a student from the dropdown menu.</li>
-        <li>2. Enter scores for each homework, quiz, the midterm, and the final project.</li>
-        <li>3. Press "Submit Grades" to calculate and save the student's final grade.</li>
-        <li>4. Review all students' final grades in the table below.</li>
-    </ul>
-    Note: You can enter grades for a student only once. After submission, grades are saved permanently.
-</p>
-
-
 // Check for form submission to handle grade entry and calculation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_id = $_POST['student_id'];
@@ -51,11 +39,21 @@ $students = $pdo->query("SELECT student_id, name FROM students")->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Grading Tool</title>
-    <link rel="stylesheet" href="styles_reduced.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="instructions-box">
     <h2>Grading Tool for Teachers</h2>
-    <p class="instructions">Select a student, enter their scores, and submit to calculate their final grade. The tool automatically saves grades for future reference.</p>
+    <h3>Welcome to the Grading Tool! Follow these steps:</h3>
+    <ul class="instructions">
+        <li>1. Choose a student from the dropdown menu.</li>
+        <li>2. Enter scores for each homework, quiz, the midterm, and the final project.</li>
+        <li>3. Press "Submit Grades" to calculate and save the student's final grade.</li>
+        <li>4. Review all students' final grades in the table below.</li>
+    </ul>
+    <p class="note">Note: You can enter grades for a student only once. After submission, grades are saved permanently.</p>
+</div>
+
 
     <?php if (isset($message)): ?>
         <p class="success-message"><?php echo $message; ?></p>
@@ -108,6 +106,7 @@ $students = $pdo->query("SELECT student_id, name FROM students")->fetchAll();
     }
     </script>
 
+<div class="final-grades-box">
     <h2>Final Grades</h2>
     <table class="grades-table">
         <tr>
@@ -122,5 +121,6 @@ $students = $pdo->query("SELECT student_id, name FROM students")->fetchAll();
         }
         ?>
     </table>
+</div>
 </body>
 </html>
